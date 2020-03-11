@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>dept表</title>
+
+</head>
+
+<body>
+
+<h2>查看Dept表<h2>
+ <button class="btn btn-primary form-control" style="height:50px"><a th:href="@{'insertPage'}">添加用户</a></button>
+<table   cellspacing="0" cellpadding="0" width="70%" border="1px">
+				<th> id </th>
+				<th> name </th>
+				<th> age </th>
+			
+			</tr>
+			<tr  th:each="user:${UserList}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.age}"></td>
+				<td>
+                   <a class="btn btn-primary" th:href="@{'/updatePage/'+${user.id}}">更改</a>
+                   <a class="btn btn-danger" th:href="@{'/delete/'+${user.id}}">删除</a>
+               </td>
+			
+			</tr>
+			
+			
+		</table>
+		
+</div>
+
+</body>
+
+</html>
